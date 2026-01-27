@@ -1,0 +1,30 @@
+# Virtual Environment
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Environment variables
+.env
+.env.local
+
+# Data files (we'll track small samples but not large datasets)
+data/*.csv
+data/*.json
+data/*.db
+!data/.gitkeep
+
+# Jupyter Notebooks checkpoints
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
