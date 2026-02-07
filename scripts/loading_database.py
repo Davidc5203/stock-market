@@ -9,4 +9,3 @@ df.to_sql('stocks', connection, if_exists='replace', index=False)
 
 connection.close()
 
-print("✅ Data successfully loaded into stock_data.db")
