@@ -8,13 +8,12 @@ query = '''
 SELECT Ticker, AVG(Daily_Returns) AS Average_Returns
 FROM stocks
 WHERE Daily_Returns is NOT NULL
-GROUP BY 1
+GROUP BY Ticker
 ORDER BY Average_Returns DESC
-LIMIT 5;
 '''
 
 average_returns = pd.read_sql_query(query, connection)
-#print(average_returns)
+print(average_returns)
 
 #finding which stocks has the highest average volatility
 
@@ -29,7 +28,8 @@ LIMIT 5;
 '''
 
 average_volatility = pd.read_sql_query(query_1, connection)
-#print("These are the 5 highest average volatility:\n",average_volatility)
+print("These are the 5 highest average volatility:\n",average_volatility)
+
 
 #Best performing stock overall
 
@@ -59,7 +59,8 @@ ORDER BY Total_Return DESC
 '''
 
 top_performance = pd.read_sql_query(query_2, connection)
-#print(top_performance)
+print(top_performance)
+
 
 #Best single trading day
 
@@ -73,7 +74,7 @@ LIMIT 5;
 '''
 
 best_trading_day = pd.read_sql_query(query_3, connection)
-#print(best_trading_day)
+print(best_trading_day)
 
 
 #Risk and Return Tradeoff
@@ -94,4 +95,7 @@ ORDER BY Average_Returns DESC;
 
 risk_return = pd.read_sql_query(query_4, connection)
 print(risk_return)
+
+connection.close()
+
 
